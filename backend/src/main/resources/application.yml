@@ -48,11 +48,13 @@ spring:
       client:
         registration:
           kakao:
-            clientId: ON_SECRET
+            client-id: dfd3fafb61cab91f062c15582e2a7b87
+            client-secret: xrcQeh7TVCKYHL7qIpZp0JePP9c9BNxL
+            client-authentication-method: client_secret_post
             scope: profile_nickname, profile_image
             client-name: Kakao
             authorization-grant-type: authorization_code
-            redirect-uri: "${custom.site.backUrl}/login/oauth2/code/kakao"
+            redirect-uri: http://localhost:8080/login/oauth2/code/kakao
         provider:
           kakao:
             authorization-uri: https://kauth.kakao.com/oauth/authorize
@@ -84,9 +86,9 @@ custom:
     frontUrl: "http://${custom.dev.domain}:3000"
 
   site:
-    domain: "${custom.prod.domain}"
-    backUrl: "${custom.prod.backUrl}"
-    frontUrl: "${custom.prod.frontUrl}"
+    domain: "${custom.dev.domain}"
+    backUrl: "${custom.dev.backUrl}"
+    frontUrl: "${custom.dev.frontUrl}"
 
   jwt:
     expire-seconds: "#{60 * 30}"
