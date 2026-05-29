@@ -15,6 +15,7 @@ spring:
         highlight_sql: false
         use_sql_comments: false
 
+
 logging:
   level:
     com.example: INFO
