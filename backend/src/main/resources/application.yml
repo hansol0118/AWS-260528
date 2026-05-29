@@ -68,15 +68,17 @@ logging:
     org.hibernate.orm.jdbc.bind: TRACE
     org.hibernate.orm.jdbc.extract: TRACE
     org.springframework.transaction.interceptor: TRACE
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: TRACE
 
 springdoc:
   default-produces-media-type: application/json;charset=UTF-8
 
 
 custom:
-  appName: app4
+  appName: testApp
   prod:
-    domain: qwas.shop
+    domain: ak47.cloud
     backUrl: "https://api.${custom.appName}.${custom.prod.domain}"
     frontUrl: "https://www.${custom.appName}.${custom.prod.domain}"
 
