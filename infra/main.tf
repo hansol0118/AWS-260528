@@ -280,7 +280,6 @@ data "aws_ami" "latest_amazon_linux" {
     values = ["ebs"]
   }
 }
-
 data "aws_ssm_parameter" "amazon_linux_ami" {
   name = "/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64"
 }
@@ -288,8 +287,7 @@ data "aws_ssm_parameter" "amazon_linux_ami" {
 # EC2 인스턴스 생성
 resource "aws_instance" "ec2_1" {
   # 사용할 AMI ID
-  ami = data.aws_ssm_parameter.amazon_linux_ami.value
-  # EC2 인스턴스 유형
+  ami = data.aws_ssm_parameter.amazon_linux_ami.value  # EC2 인스턴스 유형
   instance_type = "t3.micro"
   # 사용할 서브넷 ID
   subnet_id = aws_subnet.subnet_4.id
